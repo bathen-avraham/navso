@@ -121,6 +121,7 @@ export default function AdminPage() {
               action={
                 <button
                   type="button"
+                  data-umami-event="admin-filter-clear"
                   className="btn-secondary"
                   onClick={() => {
                     setSubjectFilter('all');

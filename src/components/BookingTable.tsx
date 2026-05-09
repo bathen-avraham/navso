@@ -78,6 +78,7 @@ export default function BookingTable({ bookings, onStatusChange, onDelete }: Pro
                 <Td>
                   <button
                     type="button"
+                    data-umami-event="admin-booking-delete"
                     onClick={() => {
                       if (window.confirm(t('admin.action.confirmDelete'))) {
                         onDelete(b.id);

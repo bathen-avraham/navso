@@ -26,6 +26,9 @@ export default function TimeSlotPicker({ selectedDay, selectedTime, onSelect }: 
                   type="button"
                   onClick={() => onSelect(slot.day, time)}
                   aria-pressed={active}
+                  data-umami-event="slot-pick"
+                  data-umami-event-day={slot.day}
+                  data-umami-event-time={time}
                   className={[
                     'px-4 py-2 rounded-xl text-sm border transition-colors',
                     active

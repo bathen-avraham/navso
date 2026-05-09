@@ -39,12 +39,14 @@ export default function ContactSection({ compact = false }: Props) {
             value={phoneDisplay}
             href={phoneTel}
             icon={<PhoneIcon />}
+            eventName="phone-click"
           />
           <ContactCard
             label={t('contact.email')}
             value={emailAddress}
             href={emailHref}
             icon={<MailIcon />}
+            eventName="email-click"
           />
           <ContactCard
             label={t('contact.whatsapp')}
@@ -54,6 +56,7 @@ export default function ContactSection({ compact = false }: Props) {
             icon={<ChatIcon />}
             accent
             cta={t('contact.whatsapp.cta')}
+            eventName="whatsapp-click"
           />
         </div>
 
@@ -73,6 +76,7 @@ interface ContactCardProps {
   external?: boolean;
   accent?: boolean;
   cta?: string;
+  eventName?: string;
 }
 
 function ContactCard({
@@ -83,6 +87,7 @@ function ContactCard({
   external,
   accent,
   cta,
+  eventName,
 }: ContactCardProps) {
   const externalProps = external
     ? { target: '_blank' as const, rel: 'noopener noreferrer' }
@@ -96,6 +101,8 @@ function ContactCard({
       href={href}
       {...externalProps}
       title={value}
+      data-umami-event={eventName}
+      data-umami-event-loc="section"
       className="card card-hover flex flex-col items-center text-center group cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-300 focus:ring-offset-2 focus:ring-offset-white"
     >
       <div

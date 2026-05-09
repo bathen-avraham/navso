@@ -37,6 +37,9 @@ export default function BookingButton({
       href={bookingUrl}
       target="_blank"
       rel="noopener noreferrer"
+      data-umami-event="cta-book"
+      data-umami-event-label={labelKey}
+      data-umami-event-variant={variant}
       className={[base, sizeClass, className].filter(Boolean).join(' ')}
     >
       {children ?? t(labelKey)}
