@@ -95,6 +95,7 @@ export default function Navbar() {
           className="md:hidden -me-1 p-2 rounded-lg hover:bg-slate-100 transition-colors"
           aria-label="menu"
           aria-expanded={open}
+          data-umami-event="nav-menu-toggle"
           onClick={() => setOpen((v) => !v)}
         >
           <span

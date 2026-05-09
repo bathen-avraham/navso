@@ -17,6 +17,8 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={t('whatsapp.aria')}
+      data-umami-event="whatsapp-click"
+      data-umami-event-loc="floating"
       className="
         fixed bottom-5 right-5 z-50
         w-14 h-14 rounded-full
