@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>נבס״ו מורה פרטית בשבילך</title>
+    <meta name="description" content="נבס״ו — שיעורים פרטיים בלשון ומתמטיקה, בדגש על לשון. אונליין בלבד, 60 דקות לכל שיעור, הכנה לבגרויות וליווי אישי." />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Set dir/lang and tab title from saved language before React mounts.
+      try {
+        var saved = localStorage.getItem('navso.language.v1');
+        if (saved === 'en') {
+          document.documentElement.lang = 'en';
+          document.documentElement.dir = 'ltr';
+          document.title = 'Navso Private Tutoring';
+        }
+      } catch (_e) {}
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
