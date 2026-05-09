@@ -9,4 +9,10 @@ dist-ssr
 *.log
 .env
 .env.local
+.env.production
 .env.*.local
+
+# SSH keys / certs — never commit credentials
+*.pem
+*.key
+*.crt
