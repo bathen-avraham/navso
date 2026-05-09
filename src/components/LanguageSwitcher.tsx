@@ -15,6 +15,8 @@ export default function LanguageSwitcher({ className = '' }: Props) {
         type="button"
         onClick={() => setLanguage(value)}
         aria-pressed={active}
+        data-umami-event="lang-switch"
+        data-umami-event-to={value}
         className={[
           'px-3 py-1.5 text-sm rounded-full transition-colors',
           active

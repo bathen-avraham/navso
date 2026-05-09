@@ -86,6 +86,9 @@ export default function SubjectCard({
         href={bookingUrl}
         target="_blank"
         rel="noopener noreferrer"
+        data-umami-event="cta-book-topic"
+        data-umami-event-subject={subject}
+        data-umami-event-topic={topic}
         className="mt-5 text-sm font-semibold text-brand-700 hover:text-brand-800 inline-flex items-center gap-1.5 group/link"
       >
         {t('home.cta.book')}

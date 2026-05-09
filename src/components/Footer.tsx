@@ -74,13 +74,27 @@ export default function Footer() {
           <ul className="space-y-2.5 text-sm text-slate-600">
             <li className="flex items-start gap-2">
               <span className="text-slate-500 shrink-0">{t('contact.phone')}:</span>
-              <a href={phoneTel} dir="ltr" title={phoneDisplay} className={contactLinkClass}>
+              <a
+                href={phoneTel}
+                dir="ltr"
+                title={phoneDisplay}
+                data-umami-event="phone-click"
+                data-umami-event-loc="footer"
+                className={contactLinkClass}
+              >
                 {phoneDisplay}
               </a>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-slate-500 shrink-0">{t('contact.email')}:</span>
-              <a href={emailHref} dir="ltr" title={emailAddress} className={contactLinkClass}>
+              <a
+                href={emailHref}
+                dir="ltr"
+                title={emailAddress}
+                data-umami-event="email-click"
+                data-umami-event-loc="footer"
+                className={contactLinkClass}
+              >
                 {emailAddress}
               </a>
             </li>
@@ -92,6 +106,8 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 dir="ltr"
                 title={whatsappDisplay}
+                data-umami-event="whatsapp-click"
+                data-umami-event-loc="footer"
                 className={contactLinkClass}
               >
                 {whatsappDisplay}

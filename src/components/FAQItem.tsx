@@ -20,6 +20,8 @@ export default function FAQItem({ question, answer, defaultOpen = false }: Props
         type="button"
         className="w-full flex items-center justify-between gap-4 px-5 py-4 text-start group"
         aria-expanded={open}
+        data-umami-event="faq-toggle"
+        data-umami-event-question={question}
         onClick={() => setOpen((v) => !v)}
       >
         <span

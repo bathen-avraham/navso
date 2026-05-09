@@ -113,6 +113,12 @@ export default function BookingForm() {
     const slot = slotById.get(slotId);
     if (!slot) return;
 
+    window.umami?.track('booking-submit', {
+      subject,
+      topic,
+      studentLevel,
+    });
+
     const booking = saveBooking({
       subject,
       topic,
@@ -298,6 +304,7 @@ export default function BookingForm() {
         </p>
         <button
           type="submit"
+          data-umami-event="booking-submit-click"
           className="btn-primary w-full sm:w-auto sm:px-10 text-base"
         >
           {t('booking.submit')}
