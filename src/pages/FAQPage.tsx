@@ -2,7 +2,7 @@ import BookingButton from '../components/BookingButton';
 import FAQItem from '../components/FAQItem';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const faqIds = ['q7', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6'] as const;
+const faqIds = ['q7', 'q1', 'q2', 'q3', 'q4', 'q8', 'q5', 'q6'] as const;
 
 export default function FAQPage() {
   const { t } = useLanguage();

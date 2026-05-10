@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import BookingButton from '../components/BookingButton';
 import { HebrewIcon, MathIcon } from '../components/icons';
 import { useLanguage } from '../contexts/LanguageContext';
-import { hebrewTopics } from '../data/mockData';
+import { hebrewTopics, mathTopics } from '../data/mockData';
 
 interface Highlight {
   id: 'degree' | 'experience' | 'hebrew' | 'math';
@@ -129,37 +129,28 @@ export default function AboutPage() {
       <section className="mb-16">
         <SectionHeading
           eyebrow={t('about.section.subjects')}
-          title={t('subjects.hebrew.title')}
+          title={t('about.section.subjects')}
         />
-        <div className="grid lg:grid-cols-3 gap-6">
-          <div className="card lg:col-span-2 space-y-4 text-slate-700 leading-relaxed text-base">
-            <p>{t('about.p2')}</p>
-            <p>{t('about.p3')}</p>
-            <p className="text-xs text-slate-500 italic">
-              {t('common.bagrutNote')}
-            </p>
-          </div>
-          <div className="card">
-            <h3 className="font-semibold text-slate-900 mb-3">
-              {t('subjects.hebrew.title')}
-            </h3>
-            <ul className="grid gap-2.5 text-sm">
-              {hebrewTopics
-                .filter((topic) => topic !== 'general')
-                .map((topic) => (
-                  <li
-                    key={topic}
-                    className="flex items-center gap-2.5 text-slate-700"
-                  >
-                    <span
-                      aria-hidden
-                      className="w-1.5 h-1.5 rounded-full bg-brand-500 shrink-0"
-                    />
-                    {t(`topic.${topic}.title`)}
-                  </li>
-                ))}
-            </ul>
-          </div>
+        <div className="card mb-6 space-y-4 text-slate-700 leading-relaxed text-base">
+          <p>{t('about.p2')}</p>
+          <p>{t('about.p3')}</p>
+          <p className="text-xs text-slate-500 italic">
+            {t('common.bagrutNote')}
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          <TopicListCard
+            iconClass="bg-brand-gradient"
+            iconNode={<HebrewIcon size={18} />}
+            title={t('subjects.hebrew.title')}
+            topics={hebrewTopics.filter((topic) => topic !== 'general')}
+          />
+          <TopicListCard
+            iconClass="bg-gradient-to-br from-accent-400 to-accent-600"
+            iconNode={<MathIcon size={18} />}
+            title={t('subjects.math.title')}
+            topics={mathTopics.filter((topic) => topic !== 'general')}
+          />
         </div>
       </section>
 
@@ -199,6 +190,47 @@ function SectionHeading({
       <h2 className="text-2xl md:text-3xl font-bold mt-1 text-slate-900 tracking-tight">
         {title}
       </h2>
+    </div>
+  );
+}
+
+function TopicListCard({
+  iconClass,
+  iconNode,
+  title,
+  topics,
+}: {
+  iconClass: string;
+  iconNode: ReactNode;
+  title: string;
+  topics: readonly string[];
+}) {
+  const { t } = useLanguage();
+  return (
+    <div className="card">
+      <div className="flex items-center gap-3 mb-4">
+        <div
+          aria-hidden
+          className={`w-10 h-10 rounded-xl ${iconClass} text-white grid place-items-center shadow-soft shrink-0`}
+        >
+          {iconNode}
+        </div>
+        <h3 className="font-semibold text-slate-900">{title}</h3>
+      </div>
+      <ul className="grid gap-2.5 text-sm">
+        {topics.map((topic) => (
+          <li
+            key={topic}
+            className="flex items-center gap-2.5 text-slate-700"
+          >
+            <span
+              aria-hidden
+              className="w-1.5 h-1.5 rounded-full bg-brand-500 shrink-0"
+            />
+            {t(`topic.${topic}.title`)}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

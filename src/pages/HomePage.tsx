@@ -6,7 +6,7 @@ import Testimonials from '../components/Testimonials';
 import ContactSection from '../components/ContactSection';
 import WhyStudyWithMe from '../components/WhyStudyWithMe';
 import { useLanguage } from '../contexts/LanguageContext';
-import { hebrewTopics, packageOptions } from '../data/mockData';
+import { hebrewTopics, mathTopics, packageOptions } from '../data/mockData';
 
 export default function HomePage() {
   const { t } = useLanguage();
@@ -42,16 +42,20 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Math is visually secondary: smaller chip + a single representative card. */}
+          {/* Math: balanced section with the same card grid. */}
           <div className="rounded-3xl border border-slate-100 bg-white p-5 sm:p-7 shadow-soft">
-            <div className="flex flex-wrap items-center gap-2 mb-5">
+            <div className="flex flex-wrap items-baseline gap-2 mb-5">
               <span className="chip-accent">{t('home.improve.mathLabel')}</span>
               <span className="text-sm text-slate-600">
                 {t('subjects.math.subtitle')}
               </span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              <SubjectCard topic="examPrep" subject="math" />
+              {mathTopics
+                .filter((topic) => topic !== 'general')
+                .map((topic) => (
+                  <SubjectCard key={topic} topic={topic} subject="math" />
+                ))}
             </div>
           </div>
         </div>
@@ -75,6 +79,9 @@ export default function HomePage() {
               />
             ))}
           </div>
+          <p className="text-center text-xs text-slate-500 mt-8 max-w-2xl mx-auto leading-relaxed">
+            {t('packages.pricing.note')}
+          </p>
         </div>
       </section>
 

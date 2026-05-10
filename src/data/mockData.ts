@@ -21,6 +21,7 @@ export const mathTopics: MathTopic[] = [
   'algebra',
   'functions',
   'geometry',
+  'trigonometry',
   'probability',
   'examPrep',
 ];
@@ -40,6 +41,7 @@ export const topicInfo: Record<HebrewTopic | MathTopic, TopicInfo> = {
   algebra: { id: 'algebra', difficulty: 'beginner', recommendedDuration: 60 },
   functions: { id: 'functions', difficulty: 'intermediate', recommendedDuration: 60 },
   geometry: { id: 'geometry', difficulty: 'intermediate', recommendedDuration: 60 },
+  trigonometry: { id: 'trigonometry', difficulty: 'advanced', recommendedDuration: 60 },
   probability: { id: 'probability', difficulty: 'intermediate', recommendedDuration: 60 },
   examPrep: { id: 'examPrep', difficulty: 'advanced', recommendedDuration: 60 },
   // Shared "not sure / general" option
@@ -54,9 +56,25 @@ export const timeSlots: TimeSlot[] = [
 ];
 
 export const packageOptions: PackageOption[] = [
-  { id: 'single', duration: 60 },
-  { id: 'fivePack', duration: 60 },
-  { id: 'bagrutFocus', duration: 60 },
+  {
+    id: 'single',
+    duration: 60,
+    pricePerLesson: 120,
+  },
+  {
+    id: 'fivePack',
+    duration: 60,
+    pricePerLesson: 100,
+    totalPrice: 500,
+    bagrutSeason: true,
+  },
+  {
+    id: 'marathon',
+    duration: 60,
+    pricePerLesson: 100,
+    totalPrice: 1000,
+    bagrutSeason: true,
+  },
 ];
 
 export const testimonials: Testimonial[] = [
@@ -72,8 +90,8 @@ export const testimonials: Testimonial[] = [
     id: 't2',
     name: { he: 'אליאור, כיתה י״א', en: 'Elior, 11th grade' },
     quote: {
-      he: 'תודה רבההה, באמת חייב לך תודה ענקית. עזרת לי כל כך וצמצמת איתי פערים ענקיים בזמן כל כך קצר. תודה לך על הכול ❤️🙏🙏',
-      en: 'Thank you so muchhh, I really owe you a huge thank you. You helped me so much and helped me close huge gaps in such a short time. Thank you for everything ❤️🙏🙏',
+      he: 'תודה רבההה, באמת חייב לך תודה ענקית. עזרת לי כל כך וצמצמת איתי פערים ענקיים בזמן כל כך קצר. בזכותך הבנתי את החומר והגעתי הרבה יותר מוכן למתכונת ולבגרות. ציון ההגשה שלי היה 95, וזה מטורף ברמות. באמת יש לך חלק גדול ומשמעותי בזה. תודה לך על הכול ❤️🙏🙏',
+      en: 'Thank you so muchhh, I really owe you a huge thank you. You helped me so much and helped me close huge gaps in such a short time. Thanks to you, I understood the material and felt much more prepared for the exam and Bagrut. My submitted grade was 95, which was amazing. You really had a big and meaningful part in that. Thank you for everything ❤️🙏🙏',
     },
   },
   {

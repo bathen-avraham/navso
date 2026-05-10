@@ -14,6 +14,7 @@ export type MathTopic =
   | 'algebra'
   | 'functions'
   | 'geometry'
+  | 'trigonometry'
   | 'probability'
   | 'examPrep'
   | 'general';
@@ -70,8 +71,14 @@ export interface TopicInfo {
 }
 
 export interface PackageOption {
-  id: 'single' | 'fivePack' | 'bagrutFocus';
+  id: 'single' | 'fivePack' | 'marathon';
   duration: LessonDuration;
+  /** Numeric price in NIS, used to display "₪{price} per lesson". */
+  pricePerLesson: number;
+  /** Optional package total in NIS (omit for single lessons). */
+  totalPrice?: number;
+  /** When true, the displayed price is highlighted as a Bagrut-season rate. */
+  bagrutSeason?: boolean;
 }
 
 export interface TimeSlot {

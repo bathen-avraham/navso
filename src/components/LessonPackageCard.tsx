@@ -17,9 +17,7 @@ export default function LessonPackageCard({ pkg, highlighted = false }: Props) {
     <article
       className={[
         'relative card card-hover flex flex-col h-full',
-        highlighted
-          ? 'ring-2 ring-brand-500 shadow-lift border-transparent'
-          : '',
+        highlighted ? 'ring-2 ring-brand-500 shadow-lift border-transparent' : '',
       ].join(' ')}
     >
       {highlighted && (
@@ -32,6 +30,31 @@ export default function LessonPackageCard({ pkg, highlighted = false }: Props) {
       <p className="text-sm text-slate-600 leading-relaxed mb-5 flex-1">
         {t(descKey)}
       </p>
+
+      {/* Price block */}
+      <div className="rounded-xl bg-slate-50/70 border border-slate-100 p-4 mb-5">
+        <div className="flex items-baseline gap-1.5">
+          <span className="text-3xl font-bold text-slate-900 leading-none" dir="ltr">
+            ₪{pkg.pricePerLesson}
+          </span>
+          <span className="text-sm text-slate-500">
+            {t('package.price.perLesson')}
+          </span>
+        </div>
+        {pkg.totalPrice !== undefined && (
+          <p className="text-xs text-slate-500 mt-2">
+            {t('package.total')}:{' '}
+            <span dir="ltr" className="font-semibold text-slate-700">
+              ₪{pkg.totalPrice.toLocaleString('en-US')}
+            </span>
+          </p>
+        )}
+        {pkg.bagrutSeason && (
+          <p className="text-[11px] text-brand-700 mt-2 font-medium">
+            ★ {t('package.bagrutBadge')}
+          </p>
+        )}
+      </div>
 
       <ul className="text-sm space-y-3 mb-6 pt-4 border-t border-slate-100">
         <li className="flex items-start justify-between gap-3">
@@ -49,7 +72,7 @@ export default function LessonPackageCard({ pkg, highlighted = false }: Props) {
       </ul>
 
       <BookingButton
-        labelKey="package.cta"
+        labelKey="cta.calendar"
         variant={highlighted ? 'primary' : 'secondary'}
         arrow={false}
         className="w-full justify-center"
