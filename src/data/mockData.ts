@@ -28,9 +28,17 @@ export const mathTopics: MathTopic[] = [
 
 export const topicInfo: Record<HebrewTopic | MathTopic, TopicInfo> = {
   // Hebrew
-  morphology: { id: 'morphology', difficulty: 'intermediate', recommendedDuration: 60 },
+  morphology: {
+    id: 'morphology',
+    difficulty: 'intermediate',
+    recommendedDuration: 60,
+  },
   numbers: { id: 'numbers', difficulty: 'beginner', recommendedDuration: 60 },
-  reading: { id: 'reading', difficulty: 'intermediate', recommendedDuration: 60 },
+  reading: {
+    id: 'reading',
+    difficulty: 'intermediate',
+    recommendedDuration: 60,
+  },
   integratedWriting: {
     id: 'integratedWriting',
     difficulty: 'advanced',
@@ -39,10 +47,26 @@ export const topicInfo: Record<HebrewTopic | MathTopic, TopicInfo> = {
   bagrut: { id: 'bagrut', difficulty: 'advanced', recommendedDuration: 60 },
   // Math
   algebra: { id: 'algebra', difficulty: 'beginner', recommendedDuration: 60 },
-  functions: { id: 'functions', difficulty: 'intermediate', recommendedDuration: 60 },
-  geometry: { id: 'geometry', difficulty: 'intermediate', recommendedDuration: 60 },
-  trigonometry: { id: 'trigonometry', difficulty: 'advanced', recommendedDuration: 60 },
-  probability: { id: 'probability', difficulty: 'intermediate', recommendedDuration: 60 },
+  functions: {
+    id: 'functions',
+    difficulty: 'intermediate',
+    recommendedDuration: 60,
+  },
+  geometry: {
+    id: 'geometry',
+    difficulty: 'intermediate',
+    recommendedDuration: 60,
+  },
+  trigonometry: {
+    id: 'trigonometry',
+    difficulty: 'advanced',
+    recommendedDuration: 60,
+  },
+  probability: {
+    id: 'probability',
+    difficulty: 'intermediate',
+    recommendedDuration: 60,
+  },
   examPrep: { id: 'examPrep', difficulty: 'advanced', recommendedDuration: 60 },
   // Shared "not sure / general" option
   general: { id: 'general', difficulty: 'beginner', recommendedDuration: 60 },
@@ -71,8 +95,8 @@ export const packageOptions: PackageOption[] = [
   {
     id: 'marathon',
     duration: 60,
-    pricePerLesson: 100,
-    totalPrice: 1000,
+    pricePerLesson: 80,
+    totalPrice: 800,
     bagrutSeason: true,
   },
 ];
