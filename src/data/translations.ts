@@ -7,7 +7,7 @@ export const translations: Record<Language, Dict> = {
     // Brand & nav
     'brand.name': 'נבס״ו',
     'brand.tagline': 'מורה פרטית בשבילך',
-    'page.title': 'נבס״ו מורה פרטית בשבילך',
+    'page.title': 'בתחן אברהם | מורה פרטית בשבילך',
     'profile.name': 'בתחן אברהם',
     'profile.role': 'מורה פרטית ללשון ומתמטיקה',
     'profile.tagline': 'הכנה לבגרויות · שיעורים אונליין',
@@ -410,7 +410,7 @@ export const translations: Record<Language, Dict> = {
     // Brand & nav
     'brand.name': 'Navso',
     'brand.tagline': 'Private tutoring for you',
-    'page.title': 'Navso Private Tutoring',
+    'page.title': 'Bathen Abraham | Private Tutoring',
     'profile.name': 'Bathen Abraham',
     'profile.role': 'Private Hebrew and Math Tutor',
     'profile.tagline': 'Exam preparation · Online lessons',
